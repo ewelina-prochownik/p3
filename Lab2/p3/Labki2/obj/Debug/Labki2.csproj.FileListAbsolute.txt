@@ -1,6 +1,0 @@
-C:\ATH\Semestr III\P3\repos\p3\Labki2\bin\Debug\Labki2.exe
-C:\ATH\Semestr III\P3\repos\p3\Labki2\bin\Debug\Labki2.pdb
-C:\ATH\Semestr III\P3\repos\p3\Labki2\obj\Debug\Labki2.csprojAssemblyReference.cache
-C:\ATH\Semestr III\P3\repos\p3\Labki2\obj\Debug\Labki2.csproj.CoreCompileInputs.cache
-C:\ATH\Semestr III\P3\repos\p3\Labki2\obj\Debug\Labki2.exe
-C:\ATH\Semestr III\P3\repos\p3\Labki2\obj\Debug\Labki2.pdb
