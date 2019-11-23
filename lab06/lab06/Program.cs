@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using RandomDataGenerator.Randomizers;
 using RandomDataGenerator.FieldOptions;
 
@@ -72,19 +73,37 @@ namespace lab06
 //                int pierwszy = lista.FirstOrDefault(x => x%300 == 0);
 //                Console.WriteLine(pierwszy);
 
-            var intGenerator = RandomizerFactory.GetRandomizer(new FieldOptionsInteger());
+//            var intGenerator = RandomizerFactory.GetRandomizer(new FieldOptionsInteger());
+//            var nameGenerator = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
+//            var lastNameGenerator = RandomizerFactory.GetRandomizer(new FieldOptionsLastName());
+
+
+//            Osoba random = new Osoba(
+//                intGenerator.Generate().Value,
+//                nameGenerator.Generate(),
+//                lastNameGenerator.Generate()
+//            );
+//
+//
+//                Console.WriteLine($"{random.id}: {random.imie} {random.nazwisko}");
+
+            //Wygenerowac 100 osob i posortowac pierwsze po nazwisku, a pozniej po imieniu
+
             var nameGenerator = RandomizerFactory.GetRandomizer(new FieldOptionsFirstName());
             var lastNameGenerator = RandomizerFactory.GetRandomizer(new FieldOptionsLastName());
 
+            List<Osoba> osoby =
+                Enumerable.Range(1, 100)
+                    .Select(x => new Osoba(id: x, imie: nameGenerator.Generate(), nazwisko: lastNameGenerator.Generate()))
+                    .OrderBy(x => x.nazwisko)
+                    .ThenBy(x => x.imie)
+                    .ToList()
+                ;
 
-            Osoba random = new Osoba(
-                intGenerator.Generate().Value,
-                nameGenerator.Generate(),
-                lastNameGenerator.Generate()
-            );
-
-
-                Console.WriteLine($"{random.id}: {random.imie} {random.nazwisko}");
+            foreach (var item in osoby)
+            {
+                Console.WriteLine(item.imie + " " + item.nazwisko);
+            }
         }
     }
 }
