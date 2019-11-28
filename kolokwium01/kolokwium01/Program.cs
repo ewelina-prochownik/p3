@@ -7,15 +7,23 @@ namespace kolokwium01
     {
         static void Main(string[] args)
         {
-            //zad1b
-            float y = 0;
-            Console.WriteLine("Podaj wartosc do przeskalowania");
-            string liczba = Console.ReadLine();
-            float x = Convert.ToSingle(liczba);
+            Zad1B.Add();
+            
+            var zad2B = new Zad2B();
+            zad2B.SprawdzTablice();
 
-            y = ((x - 50) / (150 - 50));
-            Console.WriteLine(y);
+            int[][] dzialy =
+            {
+                new[] {3, 7, 12, 4},
+                new[] {9, 1, 34, 17, 6, 2},
+                new[] {5, 150},
+                new[] {8, 19, 43}
+            };
 
+            var zad3B = new Zad3B();
+            zad3B.LiczbaPracownikow(dzialy);
+            zad3B.MaxLiczbaPracownikow(dzialy);
+            zad3B.NajnowszyPracownik(dzialy);
         }
     }
 };
